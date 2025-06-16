@@ -17,7 +17,7 @@ R, C, map_city = Input_Data()
 INF = 10**9
 
 def bfs(sr, sc, R, C, grid):
-	dist = [[-1]*C for _ in range(R)] # -1로 초기화
+	dist = [[-1] * C for _ in range(R)] # -1로 초기화
 	dist[sr][sc] = 0 # 시작점
 	q = deque()
 	q.append((sr, sc))
@@ -50,7 +50,7 @@ points = [start] + [points_dict[i] for i in sorted_digits]
 n = len(points) # 전체 방문지점 수
 
 
-dist_matrix = [[INF]*n for _ in range(n)]
+dist_matrix = [[INF] * n for _ in range(n)]
 
 for i in range(n):
 	sr, sc = points[i]
@@ -60,9 +60,7 @@ for i in range(n):
 		d = dist2d[tr][tc]
 		if d != -1:
 			dist_matrix[i][j] = d
-
-			
-			
+					
 dp = [[INF] * n for _ in range(1 << n)]
 dp[1 << 0][0] = 0
 
@@ -83,7 +81,6 @@ for i in range(n):
 	cost = dp[full_mask][i] + dist_matrix[i][0]
 	if cost < ans:
 		ans = cost
-
 	
 # 출력하는 부분
 print(ans)

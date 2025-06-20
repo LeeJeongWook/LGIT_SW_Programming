@@ -9,6 +9,15 @@ def Input_Data():
 arr = [0 for _ in range(5)]
 table = [[0] * 5 for _ in range(5)]
 
+# 문자열 자르기, 합치기
+my_str = "apple,banana,cherry"
+my_str = my_str.split(',')
+# Output: ['apple', 'banana', 'cherry']
+
+words = ['apple', 'banana', 'cherry']
+words = " ".join(words)
+# Output: apple banana cherry
+
 # 테이블 열, 행의 합 구하기
 row = [sum(i) for i in table]
 col = [sum(i) for i in zip(*table)]
@@ -44,7 +53,7 @@ from itertools import permutations
 data = [1, 2, 3]
 result = list(permutations(data, 2))
 print(result)
-# [(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]
+# Output: [(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]
 
 # 조합
 from itertools import combinations
@@ -52,8 +61,7 @@ from itertools import combinations
 data = [1, 2, 3]
 result = list(combinations(data, 2))
 print(result)
-# [(1, 2), (1, 3), (2, 3)]
-
+# Output: [(1, 2), (1, 3), (2, 3)]
 
 # Dynamic Programming(DP) Top-down (재귀 + 메모이제이션)
 dp = [0] * 100

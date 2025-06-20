@@ -22,6 +22,26 @@ words = " ".join(words)
 row = [sum(i) for i in table]
 col = [sum(i) for i in zip(*table)]
 
+# 정렬
+
+nums = [5, 2, 9, 1]
+sorted_nums = sorted(nums)
+# Output: [1, 2, 5, 9]
+print(sorted(nums, reverse=True))
+# Output: [9, 5, 2, 1]
+
+# Lamda Ex
+words = ['banana', 'apple', 'cherry', 'kiwi']
+words.sort(key=lambda x: len(x))
+sorted_words = sorted(words, key=lambda x: len(x))
+# Output: ['kiwi', 'apple', 'banana', 'cherry']
+
+prior = {"R":2, "G":1, "B":0}
+data = []
+for col in ["R", "G", "B"]:
+	data.append((area[col], grid[col], col))
+data.sort(key=lambda x : (-x[0], -x[1], -prior[x[2]]))
+
 # DFS
 def dfs(graph, v, visited):
     visited[v] = True

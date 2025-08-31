@@ -23,12 +23,15 @@ row = [sum(i) for i in table]
 col = [sum(i) for i in zip(*table)]
 
 # 정렬
-
 nums = [5, 2, 9, 1]
 sorted_nums = sorted(nums)
 # Output: [1, 2, 5, 9]
 print(sorted(nums, reverse=True))
 # Output: [9, 5, 2, 1]
+
+# sort(): List의 메서드, 원본 리스트 변경
+# sorted(): 모든 반복 가능한 객체(튜플, 딕셔너리 등)에서 사용 가능, 정렬된 새로운 리스트를 반환, 원본 변경 x
+
 
 # Lamda Ex
 words = ['banana', 'apple', 'cherry', 'kiwi']

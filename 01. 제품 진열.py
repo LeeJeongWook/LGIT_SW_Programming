@@ -8,6 +8,23 @@ def Input_Data():
 
 def CalLargestBlock(id_ignore):
 	max_block_size = 0
+	tmp_arr = []
+	cur_size = 1
+	
+	for i in ID:
+		if i != id_ignore:
+			tmp_arr.append(i)
+			
+	for i in range(1, len(tmp_arr)):
+		if tmp_arr[i] == tmp_arr[i - 1]: cur_size += 1
+		else: cur_size = 1
+
+		if max_block_size < cur_size: max_block_size = cur_size
+	
+	return max_block_size
+"""
+def CalLargestBlock(id_ignore):
+	max_block_size = 0
 	cur_size = 1
 	tmpID = [i for i in ID if i != id_ignore] #<<<
 	for i in range(1, len(tmpID)): #<<<
@@ -16,7 +33,7 @@ def CalLargestBlock(id_ignore):
 
 		if max_block_size < cur_size: max_block_size = cur_size
 	return max_block_size
-
+"""
 def Solve():
 	max_cnt = 0
 	sol = 10000000

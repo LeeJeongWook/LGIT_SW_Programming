@@ -1,10 +1,24 @@
 
 # 딕셔너리(dict) : 키(key) → 값(value) 쌍으로 저장
 d = {"a": 1, "b": 2}
-
+'''
+.keys(): 딕셔너리의 모든 키를 반환합니다.
+.values(): 딕셔너리의 모든 값을 반환합니다.
+.items(): 딕셔너리의 모든 (키, 값) 쌍을 반환합니다.
+.get(key, default=None): 특정 키의 값을 반환하고, 키가 없을 경우 지정된 기본값을 반환합니다.
+.pop(key, default=None): 특정 키와 값을 딕셔너리에서 제거하고, 제거된 값을 반환합니다.
+.clear(): 딕셔너리의 모든 항목을 제거합니다.
+.copy(): 딕셔너리의 얕은 복사본을 반환합니다.
+'''
 # 집합(set): 값만 저장, 중복 없음, 순서 없음 (중괄호 {} 또는 set() 사용)
 s = {1, 2, 3}
 b = set() 
+'''
+.add(element): 집합에 새로운 원소를 추가합니다.
+.remove(element): 특정 원소를 제거합니다. 원소가 없으면 KeyError가 발생합니다.
+.discard(element): 특정 원소를 제거합니다. 원소가 없어도 에러가 발생하지 않습니다.
+.pop(): 임의의 원소 하나를 제거하고 반환합니다. 집합이 비어있으면 KeyError가 발생합니다.
+'''
 # ===============================================================
 # 데이터 입력 받기
 def Input_Data():
@@ -51,31 +65,6 @@ data = []
 for col in ["R", "G", "B"]:
 	data.append((area[col], grid[col], col))
 data.sort(key=lambda x : (-x[0], -x[1], -prior[x[2]]))
-
-# ===============================================================
-# DFS
-def dfs(graph, v, visited):
-    visited[v] = True
-    
-    for next in graph[v]:
-        if not visited[next]:
-            dfs(graph, next, visited)
-
-# BFS
-from collections import deque
-
-def bfs(graph, start, visited):
-    queue = deque([start])
-    visited[start] = True
-    
-    while queue:
-        v = queue.popleft()
-        
-        for next in graph[v]:
-            if not visited[next]:
-                queue.append(next)
-                visited[next] = True
-
 # ===============================================================
 # 순열: 순서 고려 o
 from itertools import permutations
@@ -104,38 +93,41 @@ print(list(product_result))
 # ===============================================================
 # 최소힙: 가장 작은 값이 항상 루트 노드에 위치
 import heapq
-
 # 빈 리스트로 힙 초기화
-min_heap = []
+min_heap, max_heap = []
 
-# 요소 추가 (자동으로 최소 힙 정렬 유지)
+# 요소 추가
 heapq.heappush(min_heap, 4)
-heapq.heappush(min_heap, 1)
-heapq.heappush(min_heap, 7)
-heapq.heappush(min_heap, 2)
-print(f"최소 힙: {min_heap}") # 출력: 최소 힙: [1, 2, 7, 4]
-
-# 최소값 제거 (가장 작은 값인 1이 반환되고 제거됨)
+# 최소값 제거
 min_value = heapq.heappop(min_heap)
-print(f"제거된 최소값: {min_value}") # 출력: 제거된 최소값: 1
-print(f"최소값 제거 후 힙: {min_heap}") # 출력: 최소값 제거 후 힙: [2, 4, 7]
-
-
-# 최대힙: 가장 큰 값이 항상 루트 노드에 위치
-import heapq
-
-# 빈 리스트로 최대 힙 초기화
-max_heap = []
 
 # 요소 추가 (값에 음수를 취해 추가)
 heapq.heappush(max_heap, -4)
-heapq.heappush(max_heap, -1)
-heapq.heappush(max_heap, -7)
-heapq.heappush(max_heap, -2)
-print(f"내부적으로 음수로 저장된 힙: {max_heap}") # 출력: 내부적으로 음수로 저장된 힙: [-7, -4, -2, -1]
-
-# 최대값 제거 (가장 작은 음수(-7)가 반환되고, 다시 양수(7)로 변환)
+# 최대값 제거
 max_value = -heapq.heappop(max_heap)
-print(f"제거된 최대값: {max_value}") # 출력: 제거된 최대값: 7
-print(f"최대값 제거 후 힙: {max_heap}") # 출력: 최대값 제거 후 힙: [-4, -2, -1]
+
+# ===============================================================
+# DFS
+def dfs(graph, v, visited):
+    visited[v] = True
+    
+    for next in graph[v]:
+        if not visited[next]:
+            dfs(graph, next, visited)
+
+# BFS
+from collections import deque
+
+def bfs(graph, start, visited):
+    queue = deque([start])
+    visited[start] = True
+    
+    while queue:
+        v = queue.popleft()
+        
+        for next in graph[v]:
+            if not visited[next]:
+                queue.append(next)
+                visited[next] = True
+
 # ===============================================================

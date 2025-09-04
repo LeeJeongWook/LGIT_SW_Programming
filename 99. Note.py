@@ -1,4 +1,24 @@
 
+statck = []
+'''
+append(): 스택의 맨 끝에 요소를 추가합니다.
+clear(): 스택의 모든 요소를 제거합니다.
+len(): 스택의 길이(요소 개수)를 반환합니다.
+pop(): 스택의 맨 끝 요소를 제거하고 반환합니다.
+'''
+
+from collections import deque
+q = deque()
+'''
+append(): deque의 오른쪽 끝에 요소를 추가합니다.
+appendleft(): deque의 왼쪽 끝에 요소를 추가합니다.
+pop(): deque의 오른쪽 끝 요소를 제거하고 반환합니다.
+popleft(): deque의 왼쪽 끝 요소를 제거하고 반환합니다.
+clear(): deque의 모든 요소를 제거합니다.
+index(val): deque에서 특정 값의 첫 번째 인덱스를 반환합니다.
+count(val): deque에서 특정 값의 개수를 반환합니다.
+'''
+
 # 딕셔너리(dict) : 키(key) → 값(value) 쌍으로 저장
 d = {"a": 1, "b": 2}
 '''

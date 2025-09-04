@@ -45,11 +45,16 @@ def Input_Data():
 	readl = sys.stdin.readline
 	N = int(readl())
 	ID = list(map(int, readl().split()))
-	return N, ID
+	return N, ID    
 
+# 출력 데이터 포맷 설정
+for row in dp:
+	print(" ".join(f"{num:>{width}}" for num in row))
+	
 # 데이터 초기화
 arr = [0 for _ in range(5)]
 table = [[0] * 5 for _ in range(5)]
+visited = [[0 for _ in range(m)] for _ in range(n)]
 
 # 문자열 자르기, 합치기
 my_str = "apple,banana,cherry"

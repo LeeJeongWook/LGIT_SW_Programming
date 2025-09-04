@@ -1,4 +1,3 @@
-import math
 import sys
 
 def InputData():
@@ -7,6 +6,7 @@ def InputData():
 	X = [int(readl()) for r in range(N)]
 	return N, K, X
 
+
 ans = -1
 # 입력 함수
 ##N : 이물질의 개수
@@ -14,33 +14,33 @@ ans = -1
 ##X : 이물질의 위치
 N, K, X = InputData()
 # 여기서부터 작성
-# ===========================================
-# 이진 탐색
-sorted_X = sorted(X)
+X.sort()
 
-def check(v):
-    count = 1
-    last_position = sorted_X[0] + (2 * v)
-    
-    for i in range(1, len(sorted_X)):
-        if sorted_X[i] > last_position:
-            count += 1
-            last_position = sorted_X[i] + (2 * v)
-    
-    return count
+def is_cover(V):
+	used = 0
+	i = 0
+	
+	while i < N:
+		used += 1
+		if used > K:
+			return False
 
-left, right = 1, sorted_X[-1]
-result = right
+		limit = X[i] + (2 * V)
+		while(i < N) and (X[i] <= limit):
+			i += 1
+			
+	return True
 
-while left <= right:
-    mid = (left + right) // 2
-    
-    if check(mid) <= K:
-        result = mid
-        right = mid - 1
-    else:
-        left = mid + 1
-    print(left,right)
+low, high = 0, X[-1] - X[0]
+ans = high
 
-print(result)
-# ===========================================
+while low <= high:
+	mid = (low + high) // 2
+	if is_cover(mid):
+		ans = mid
+		high = mid - 1
+	else:
+		low = mid + 1
+	
+# 출력
+print(ans)

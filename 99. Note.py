@@ -1,4 +1,24 @@
 
+statck = []
+'''
+append(): 스택의 맨 끝에 요소를 추가합니다.
+clear(): 스택의 모든 요소를 제거합니다.
+len(): 스택의 길이(요소 개수)를 반환합니다.
+pop(): 스택의 맨 끝 요소를 제거하고 반환합니다.
+'''
+
+from collections import deque
+q = deque()
+'''
+append(): deque의 오른쪽 끝에 요소를 추가합니다.
+appendleft(): deque의 왼쪽 끝에 요소를 추가합니다.
+pop(): deque의 오른쪽 끝 요소를 제거하고 반환합니다.
+popleft(): deque의 왼쪽 끝 요소를 제거하고 반환합니다.
+clear(): deque의 모든 요소를 제거합니다.
+index(val): deque에서 특정 값의 첫 번째 인덱스를 반환합니다.
+count(val): deque에서 특정 값의 개수를 반환합니다.
+'''
+
 # 딕셔너리(dict) : 키(key) → 값(value) 쌍으로 저장
 d = {"a": 1, "b": 2}
 '''
@@ -25,11 +45,16 @@ def Input_Data():
 	readl = sys.stdin.readline
 	N = int(readl())
 	ID = list(map(int, readl().split()))
-	return N, ID
+	return N, ID    
 
+# 출력 데이터 포맷 설정
+for row in dp:
+	print(" ".join(f"{num:>{width}}" for num in row))
+	
 # 데이터 초기화
 arr = [0 for _ in range(5)]
 table = [[0] * 5 for _ in range(5)]
+visited = [[0 for _ in range(m)] for _ in range(n)]
 
 # 문자열 자르기, 합치기
 my_str = "apple,banana,cherry"

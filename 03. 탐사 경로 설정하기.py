@@ -58,9 +58,13 @@ for i in range(n):
 	for j in range(n):
 		tr, tc = points[j]
 		d = dist2d[tr][tc]
+		# print(f'tr:{tr}, tc:{tc}, d:{d}')
 		if d != -1:
 			dist_matrix[i][j] = d
-					
+	# print()			
+	# for d in dist_matrix:
+	# 	print(d)
+
 dp = [[INF] * n for _ in range(1 << n)]
 dp[1 << 0][0] = 0
 
@@ -74,6 +78,9 @@ for mask in range(1 << n):
 				new_cost = dp[mask][i] + dist_matrix[i][j]
 				if new_cost < dp[nxt_mask][j]:
 					dp[nxt_mask][j] = new_cost
+		for d in dp:
+			print(d)
+		print()
 
 full_mask = (1 << n) -1
 ans = INF
@@ -84,3 +91,31 @@ for i in range(n):
 	
 # 출력하는 부분
 print(ans)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

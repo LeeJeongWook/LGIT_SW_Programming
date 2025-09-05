@@ -26,6 +26,7 @@ def is_cover(V):
 			return False
 
 		limit = X[i] + (2 * V)
+		print(limit, end = ' ')
 		while(i < N) and (X[i] <= limit):
 			i += 1
 			
@@ -44,3 +45,31 @@ while low <= high:
 	
 # Ãâ·Â
 print(ans)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

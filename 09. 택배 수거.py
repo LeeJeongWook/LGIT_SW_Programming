@@ -65,3 +65,32 @@ for sizeA in range(N + 1):
 		
 # 출력 하는 부분 Output
 print(ans) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

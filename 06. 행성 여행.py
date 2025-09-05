@@ -26,3 +26,31 @@ for i in W:
 # 출력 Output
 ans += (N - 1)
 print(ans)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -58,3 +58,31 @@ ans = data[0][2]
 areacnt = data[0][0]
 # 출력하는 부분 Output
 print(ans, areacnt)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

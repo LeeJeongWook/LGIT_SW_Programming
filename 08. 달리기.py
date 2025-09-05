@@ -31,3 +31,32 @@ for i in range(N-1, -1, -1):
 # 출력 Output
 print(ans)
 print(*group_first, sep=' ', end=' ')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

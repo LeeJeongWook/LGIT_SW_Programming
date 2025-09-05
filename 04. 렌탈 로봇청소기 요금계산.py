@@ -30,3 +30,31 @@ def OutputData(sol):
 stime, etime = InputData() #입력 
 sol = Solve() # 문제 해결
 OutputData(sol) # 출력
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

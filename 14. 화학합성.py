@@ -40,3 +40,31 @@ for right in range(M,N):
 
 # 출력하는 부분
 print(ans)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
